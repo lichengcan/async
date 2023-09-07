@@ -1,5 +1,6 @@
 package com.example.async.controller;
 
+import com.example.async.service.TestAsyncService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,22 +16,23 @@ import static java.lang.Thread.sleep;
  **/
 @RestController
 @RequestMapping("/async")
-public class TestAsync {
+public class TestAsyncController {
 
     @Autowired
-    TestAsync2 testAsync2;
+    TestAsyncService testAsync2;
 
 
     @GetMapping("/test")
     public Object test() throws InterruptedException {
         testAsync2.test1();
+        test1();
         return "123";
     }
 
     @Async
     public void test1() throws InterruptedException {
-        sleep(6000);
-        System.out.println("1");
+        sleep(3000);
+        System.out.println("奔雷1");
     }
 
 }

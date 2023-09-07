@@ -1,4 +1,4 @@
-package com.example.async.controller;
+package com.example.async.service;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
@@ -11,7 +11,7 @@ import static java.lang.Thread.sleep;
  * @description
  **/
 @Component
-public class TestAsync2 {
+public class TestAsyncService {
 
     @Async
     public void test1() throws InterruptedException {

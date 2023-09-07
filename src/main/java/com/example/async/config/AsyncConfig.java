@@ -14,10 +14,14 @@ public class AsyncConfig {
     @Bean(name = "asyncExecutor")
     public Executor asyncExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(5); // 设置核心线程数
-        executor.setMaxPoolSize(10); // 设置最大线程数
-        executor.setQueueCapacity(25); // 设置队列容量
-        executor.setThreadNamePrefix("Async-"); // 设置线程名称前缀
+        // 设置核心线程数
+        executor.setCorePoolSize(5);
+        // 设置最大线程数
+        executor.setMaxPoolSize(10);
+        // 设置队列容量
+        executor.setQueueCapacity(25);
+        // 设置线程名称前缀
+        executor.setThreadNamePrefix("Async-");
         executor.initialize();
         return executor;
     }
